@@ -2,7 +2,7 @@ FROM node
 MAINTAINER awaterman@salesforce.com
 LABEL Description="Vendor=\"Salesforce.com\" Version=\"1.0\""
 RUN apt-get update && \
-apt-get install -y vim && \
+apt-get install -y apt-get install vim && \
 mkdir /home/cookie && \
 groupadd -r cookie && useradd -r -g cookie cookie && \
 usermod -a -G sudo cookie && \

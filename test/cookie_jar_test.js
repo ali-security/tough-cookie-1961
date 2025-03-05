@@ -484,7 +484,7 @@ vows
     "Issue #282 - Prototype pollution": {
       "when setting a cookie with the domain __proto__": {
         topic: function() {
-          const jar = new tough.CookieJar(undefined, {
+          var jar = new tough.CookieJar(undefined, {
             rejectPublicSuffixes: false
           });
           // try to pollute the prototype
@@ -499,7 +499,7 @@ vows
           this.callback();
         },
         "results in a cookie that is not affected by the attempted prototype pollution": function() {
-          const pollutedObject = {};
+          var pollutedObject = {};
           assert(pollutedObject["/notauth"] === undefined);
         }
       }
